@@ -20,18 +20,19 @@ El camino de explotación combina:
 ## 1. Reconocimiento
 
    Ping
+   
 ```bash
-ping -c 4 <IP>
+ping -c 2 <IP>
 ```
 
 <img width="1245" height="143" alt="image" src="https://github.com/user-attachments/assets/90c37f31-14c9-4a1b-a611-ad990db2ab77" />
 
 → TTL=64 sugiere que se trata de un host Linux
 
-### Nmap
+   Nmap
 
 ```bash
-nmap -sCV -Pn -n --open -p- --min-rate 5000 -oA tortuga
+nmap -sCV -Pn -n --open -p- --min-rate 5000 <IP> -oA tortuga
 ```
 
 | Orden | Función |
@@ -47,6 +48,7 @@ nmap -sCV -Pn -n --open -p- --min-rate 5000 -oA tortuga
 **Resultados:**
 
 - Puerto 22: OpenSSH 9.2p1 (Debian 12)
+  
 - Puerto 80: Apache 2.4.62, sitio "Isla Tortuga" 
 
 ## 3. Enumeración web
@@ -78,6 +80,12 @@ En `mapa.php` aparece un mensaje dirigido al jugador:
 ```bash
 gobuster dir -u http://lavashop.thl/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,php,html
 ```
+
+| Orden | Función |
+|---|---|
+| `-u` | URL |
+| `-P` | Diccionario con contraseñas comunes |
+| `-x` | Extensión de archivos |
 
 <img width="1173" height="422" alt="image" src="https://github.com/user-attachments/assets/4fe46a84-20a3-459a-994e-8ab7526797ed" />
 
@@ -193,9 +201,12 @@ cat /root/root.txt
 
 ## 7. Lecciones aprendidas
 
-<img width="590" height="701" alt="image" src="https://github.com/user-attachments/assets/944913f8-6484-431c-84f4-d849439f4f96" />
+<img width="1216" height="528" alt="image" src="https://github.com/user-attachments/assets/e5e8f81c-248a-4084-a335-7cfc3c794b17" />
 
 - **Enumeración web manual:** el contenido de la aplicación `mapa.php` filtró directamente el nombre de usuario grumete, recordando que leer con atención la web es tan importante como el fuzzing automatizado
+  
 - **Contraseñas débiles:** un ataque de fuerza bruta con un diccionario básico `rockyou.txt` fue suficiente para comprometer SSH, reforzando la importancia de políticas de contraseñas robustas y mecanismos de limitación de intentos (fail2ban, rate limiting)
+  
 - **Archivos ocultos como vector de movimiento lateral:** una nota `.nota.txt` en el `/home` de un usuario contenía las credenciales del siguiente usuario, permitiendo escalar horizontalmente sin explotar ninguna vulnerabilidad técnica, solo higiene deficiente en el manejo de secretos
+  
 - **Linux Capabilities mal configuradas:** asignar `cap_setuid` a un intérprete como `python3.11` equivale a dar una puerta trasera a root, ya que cualquier lenguaje con acceso a llamadas al sistema puede abusar de ella. Siempre revisar `getcap -r /` además de `find / -perm -4000`, y verificar cada hallazgo en `GTFOBins`
