@@ -298,5 +298,7 @@ su root
 <img width="1267" height="531" alt="image" src="https://github.com/user-attachments/assets/2f5c5d62-92ab-4c2f-9a03-1ed701b384d1" />
 
 - Los parámetros de archivos individuales deben auditarse en busca de LFI
+  
 - Servicios de depuración remota (GDBServer) expuestos sin autenticación son un vector crítico de RCE
+  
 - Las variables de entorno pueden filtrar credenciales sensibles. Se debe revisar siempre `env`, `printenv`, `/proc/*/environ`
