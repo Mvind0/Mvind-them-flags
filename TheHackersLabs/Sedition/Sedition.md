@@ -23,7 +23,7 @@ El camino de explotación combina:
    Ping
    
 ```bash
-ping -c 2 10.0.2.19
+ping -c 2 <IP>
 ```
 
 <img width="1249" height="125" alt="image" src="https://github.com/user-attachments/assets/80809c6b-9c85-4348-853f-4ea73a35e07f" />
