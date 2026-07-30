@@ -94,7 +94,7 @@ gobuster dir -u http://watchstore.thl:8080 -w /usr/share/wordlists/directory-lis
   
 Estos tres hallazgos definen directamente la siguiente fase: `/read` da pie a leer archivos del servidor, y `/console` es el objetivo final una vez se consiga el PIN
  
-## 4. Explotación — LFI para filtrar el PIN
+## 4. Explotación - LFI para filtrar el PIN
 
 <img width="1115" height="584" alt="image" src="https://github.com/user-attachments/assets/58241327-8533-4d64-a234-ed8ace3d6529" />
  
@@ -107,7 +107,7 @@ curl "http://watchstore.thl:8080/read?id=/home/relox/watchstore/app.py"
 
 → El código fuente devuelto contiene el PIN de la consola de depuración en texto plano `612-791-734`
  
-## 5. Acceso inicial — Consola Python interactiva
+## 5. Acceso inicial - Consola Python interactiva
 
 <img width="1243" height="252" alt="image" src="https://github.com/user-attachments/assets/399c262d-97e2-449b-8772-177bd8cd3dbd" />
  
