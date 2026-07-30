@@ -67,6 +67,12 @@ echo "<IP> casapaco.thl" | sudo tee -a /etc/hosts
 gobuster dir -u http://casapaco.thl/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,php,html
 ```
 
+| Orden | Función |
+|---|---|
+| `-u` | URL objetivo |
+| `-w` | Diccionario de rutas |
+| `-x` | Extensiones a probar |
+
 <img width="949" height="187" alt="image" src="https://github.com/user-attachments/assets/0346bf08-eb47-4139-868d-85e59d06faca" />
 
 Directorios de interés: `static` contiene recursos estáticos, como las imágenes de la web
