@@ -143,7 +143,6 @@ hydra -l pacogerente -P /usr/share/wordlists/rockyou.txt ssh://<IP>
 |---|---|
 | `-l` | Nombre de usuario |
 | `-P` | Diccionario con contraseñas comunes |
-| `-ssh` | Número de tareas simultáneas |
 
 <img width="1296" height="230" alt="image" src="https://github.com/user-attachments/assets/d09f91b8-7b20-4ee3-a45a-008245fcfcc3" />
 
