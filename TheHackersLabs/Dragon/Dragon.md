@@ -1,5 +1,7 @@
 # Dragon
 
+<img width="1350" height="632" alt="image" src="https://github.com/user-attachments/assets/c940ce20-a841-4dd2-9d63-29a260959e75" />
+
 **Plataforma:** The Hackers Labs  
 **Dificultad:** Fácil  
 **OS:** Linux  
